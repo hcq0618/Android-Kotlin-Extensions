@@ -65,6 +65,6 @@ inline fun <reified T : Any> Context.intentFor(vararg params: Pair<Any, Any?>): 
     return intent
 }
 
-fun Intent.isIntentValid(context: Context): Boolean {
+fun Intent.isValid(context: Context): Boolean {
     return context.packageManager?.resolveActivity(this, 0) != null
 }
