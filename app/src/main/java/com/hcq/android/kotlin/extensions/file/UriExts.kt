@@ -18,7 +18,6 @@ fun Uri?.toFilePath(context: Context): String? {
 
         if (isExternalStorageDocument()) {
             if ("primary".equals(type, ignoreCase = true)) {
-                @Suppress("DEPRECATION")
                 return "${Environment.getExternalStorageDirectory()}/${parts[1]}"
             }
         } else if (isDownloadsDocument()) {
@@ -93,7 +92,6 @@ private fun Uri?.isFileScheme(): Boolean {
 
 private fun Uri?.resolveInfo(
     context: Context,
-    @Suppress("DEPRECATION")
     projectionStr: String = MediaStore.Images.Media.DATA,
     selection: String? = null,
     args: Array<String>? = null
